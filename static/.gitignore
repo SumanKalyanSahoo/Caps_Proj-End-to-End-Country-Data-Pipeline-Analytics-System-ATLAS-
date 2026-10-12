@@ -1,5 +1,0 @@
-.venv/
-.matplotlib/
-__pycache__/
-*.py[cod]
-countries.db
