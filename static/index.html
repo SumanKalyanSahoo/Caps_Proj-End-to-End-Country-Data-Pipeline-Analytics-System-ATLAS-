@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0f">
+  <title>ATLAS — Explore country data</title>
+  <link rel="icon" type="image/png" href="/static/atlas-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/chart.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="ATLAS home">
+        <span class="brand-symbol" aria-hidden="true"><img src="/static/atlas-logo.png" alt=""></span>
+        <span class="brand-word">ATLAS</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="current" href="#overview">Overview</a>
+        <a href="#visualization">Visualization</a>
+        <a href="#directory">Countries</a>
+      </nav>
+      <div class="header-actions">
+        <span class="record-pill"><span class="record-dot"></span><b id="side-count">—</b> countries</span>
+        <a class="header-link" href="/docs">API docs <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro container" id="overview">
+      <div class="breadcrumb"><a href="/">Home</a><span>/</span><span>Country explorer</span></div>
+      <div class="intro-grid">
+        <div>
+          <div class="section-tag"><span class="tag-line"></span> THE WORLD AT A GLANCE</div>
+          <h1>Explore our world<br><span>through data.</span></h1>
+        </div>
+        <div class="intro-aside">
+          <span class="intro-spark" aria-hidden="true">✦</span>
+          <p>Discover the countries in our collection. Compare population and land area, explore the numbers, and manage every record in one place.</p>
+          <a href="#directory" class="text-link">Explore countries <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero container" aria-label="ATLAS country data">
+      <div class="hero-backdrop"></div>
+      <div class="hero-top"><span>ATLAS / GLOBAL DATA</span><span>01 — 03</span></div>
+      <div class="hero-content">
+        <div class="hero-orbit" aria-hidden="true">✦</div>
+        <p>A clearer view of our world</p>
+        <h2>Every place has<br>a story to tell.</h2>
+      </div>
+      <div class="hero-bottom"><span>Scroll to explore the numbers</span><span aria-hidden="true">↓</span></div>
+    </section>
+
+    <section class="overview container" aria-label="Collection summary">
+      <div class="overview-intro"><span class="section-tag"><span class="tag-line"></span> THE COLLECTION</span><h2>Countries, by the numbers.</h2></div>
+      <div class="stats-grid">
+        <article class="stat-card"><div class="stat-top"><span>Total countries</span><span class="stat-icon blue">◎</span></div><strong id="total-countries">—</strong><small>Records in the collection</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Total population</span><span class="stat-icon violet">↗</span></div><strong id="total-population">—</strong><small>Across all listed countries</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Combined land area</span><span class="stat-icon blue">◇</span></div><strong id="total-area">—</strong><small>Square kilometers</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Last refreshed</span><span class="stat-icon violet">◷</span></div><strong class="stat-time" id="last-refreshed">—</strong><small>From the local database</small></article>
+      </div>
+    </section>
+
+    <section class="visualization container" id="visualization">
+      <div class="section-heading">
+        <div><span class="section-tag"><span class="tag-line"></span> VISUALIZATION</span><h2>See the bigger picture.</h2></div>
+        <p>How population and land area compare across the countries in the collection.</p>
+      </div>
+      <div class="chart-panel" aria-labelledby="chart-title">
+        <div class="chart-heading">
+          <div><div class="chart-kicker"><span class="chart-kicker-dot"></span> COUNTRY COMPARISON</div><h3 id="chart-title">Population vs. land area</h3><p>Hover over a point to see its country.</p></div>
+          <div class="scale-badge">LOG SCALE <span aria-hidden="true">↗</span></div>
+        </div>
+        <div class="chart-scroll"><svg id="country-chart" class="country-chart" viewBox="0 0 900 310" role="img" aria-label="Scatter plot comparing country population with land area"></svg></div>
+        <div class="chart-legend"><span class="legend-mark"></span><span id="chart-caption">Countries shown</span><span class="legend-note">Logarithmic axes; zero values appear at the edge.</span></div>
+      </div>
+    </section>
+
+    <section class="directory-section container" id="directory">
+      <div class="section-heading directory-heading">
+        <div><span class="section-tag"><span class="tag-line"></span> COUNTRY DIRECTORY</span><h2>Explore the collection.</h2></div>
+        <p>Search, add, and manage the country records behind the data.</p>
+      </div>
+      <div class="data-panel">
+        <div class="panel-heading">
+          <div><h3>All countries</h3><p>Country, capital, population and area in one view.</p></div>
+          <button class="primary-button" id="add-country"><span aria-hidden="true">＋</span> Add country</button>
+        </div>
+        <div class="toolbar">
+          <label class="search-box"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.8" cy="8.8" r="5.8"/><path d="m13.2 13.2 4 4"/></svg><input id="search" type="search" placeholder="Search countries or capitals…" autocomplete="off"><kbd>⌘ K</kbd></label>
+          <div class="toolbar-right"><span id="result-label">Loading records…</span><button class="refresh-button" id="refresh-data" aria-label="Refresh country data" title="Refresh country data">↻</button></div>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>COUNTRY</th><th>CAPITAL</th><th>POPULATION</th><th>AREA <span class="th-unit">KM²</span></th><th class="actions-head">ACTIONS</th></tr></thead>
+            <tbody id="country-rows"><tr><td colspan="5"><div class="loading"><span class="spinner"></span>Loading country records…</div></td></tr></tbody>
+          </table>
+        </div>
+        <div class="panel-footer"><span id="footer-count">—</span><span>Showing all records</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><img src="/static/atlas-logo.png" alt="ATLAS"></div>
+      <p>Country data, made easier to explore.</p>
+      <a href="/docs">Explore the API <span aria-hidden="true">↗</span></a>
+      <h2>Made by Suman Kalyan Sahoo ©2026</h2>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="country-dialog" id="country-dialog">
+    <form id="country-form" method="dialog">
+      <div class="dialog-heading"><div><span class="section-tag"><span class="tag-line"></span> COUNTRY RECORD</span><h2 id="dialog-title">Add a country</h2><p id="dialog-copy">Add a new entry to your directory.</p></div><button type="button" class="dialog-close" id="close-dialog" aria-label="Close">×</button></div>
+      <label class="form-field" for="country-name">Country name<input id="country-name" name="country_name" required maxlength="100" placeholder="e.g. New Zealand"></label>
+      <label class="form-field" for="capital">Capital city<input id="capital" name="capital" required maxlength="100" placeholder="e.g. Wellington"></label>
+      <div class="form-row"><label class="form-field" for="population">Population<input id="population" name="population" type="number" min="0" step="1" required placeholder="0"></label><label class="form-field" for="area">Area (km²)<input id="area" name="area" type="number" min="0" step="any" required placeholder="0"></label></div>
+      <div class="dialog-error" id="dialog-error" role="alert"></div>
+      <div class="dialog-actions"><button type="button" class="secondary-button" id="cancel-dialog">Cancel</button><button type="submit" class="primary-button" id="save-country">Save country</button></div>
+    </form>
+  </dialog>
+  <script src="/static/chart.js" defer></script>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+.chart-panel {
+  border: 1px solid #e8e8ee;
+  background: #fff;
+  padding: 29px 31px 17px;
+  position: relative;
+  overflow: hidden;
+}
+.chart-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, #1597ff, #8e25f3);
+}
+.chart-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+.chart-kicker { display: flex; align-items: center; gap: 8px; color: #898b98; font-size: 9px; font-weight: 800; letter-spacing: 1.4px; }
+.chart-kicker-dot { width: 7px; height: 7px; background: #6c59f0; border-radius: 50%; box-shadow: 0 0 0 4px #7854f01b; }
+.chart-heading h3 { font: 600 21px Manrope, sans-serif; letter-spacing: -.7px; margin: 9px 0 5px; }
+.chart-heading p { font-size: 11px; color: #9496a0; margin-bottom: 0; }
+.scale-badge { color: #6650b4; background: #f3efff; border: 1px solid #e5ddff; font-size: 9px; font-weight: 800; letter-spacing: .7px; padding: 8px 10px; white-space: nowrap; }
+.scale-badge span { font-size: 13px; margin-left: 6px; }
+.chart-scroll { margin-top: 20px; overflow-x: auto; overflow-y: hidden; }
+.country-chart { width: 100%; min-width: 600px; height: auto; display: block; }
+.chart-grid { stroke: #eaeaf1; stroke-width: 1; stroke-dasharray: 3 4; }
+.chart-axis { stroke: #c5c7d2; stroke-width: 1; }
+.chart-tick { fill: #92949f; font: 9px "DM Sans", sans-serif; }
+.chart-axis-label { fill: #696c79; font: 600 10px "DM Sans", sans-serif; }
+.chart-point { fill: #3d86f4; fill-opacity: .85; stroke: #fff; stroke-width: 1.5; transition: fill-opacity .15s, r .15s; }
+.chart-point:nth-of-type(3n) { fill: #7137eb; }
+.chart-point:hover, .chart-point:focus { fill: #aa22f5; fill-opacity: 1; r: 6; outline: none; }
+.chart-legend { min-height: 26px; display: flex; align-items: center; gap: 8px; font-size: 10px; color: #777a87; }
+.legend-mark { width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #178fff, #8827ef); }
+.legend-note { margin-left: auto; color: #a1a3ae; }
+@media (max-width: 680px) {
+  .chart-panel { padding: 20px 16px 13px; }
+  .chart-heading h3 { font-size: 18px; }
+  .country-chart { min-width: 570px; }
+  .legend-note { display: none; }
+}

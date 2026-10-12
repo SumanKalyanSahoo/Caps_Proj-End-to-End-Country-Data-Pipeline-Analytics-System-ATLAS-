@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 680" role="img" aria-labelledby="title desc" preserveAspectRatio="xMidYMid slice">
+  <title id="title">Atlas world illustration</title>
+  <desc id="desc">A luminous blue and violet globe rises over a dark horizon, with geographic outlines, orbital lines and points of light.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080b16"/>
+      <stop offset=".48" stop-color="#0d1432"/>
+      <stop offset="1" stop-color="#121341"/>
+    </linearGradient>
+    <radialGradient id="aurora" cx="76%" cy="43%" r="60%">
+      <stop offset="0" stop-color="#6247fd" stop-opacity=".3"/>
+      <stop offset=".43" stop-color="#2678ff" stop-opacity=".11"/>
+      <stop offset="1" stop-color="#2678ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset=".54" stop-color="#4163f6" stop-opacity="0"/>
+      <stop offset=".76" stop-color="#2786ff" stop-opacity=".16"/>
+      <stop offset=".89" stop-color="#6251ff" stop-opacity=".11"/>
+      <stop offset="1" stop-color="#6c49ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="globeFill" cx="32%" cy="23%" r="88%">
+      <stop offset="0" stop-color="#173f8e"/>
+      <stop offset=".37" stop-color="#122b66"/>
+      <stop offset=".76" stop-color="#111d48"/>
+      <stop offset="1" stop-color="#0c122d"/>
+    </radialGradient>
+    <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#32b9ff"/>
+      <stop offset=".38" stop-color="#3880fb"/>
+      <stop offset=".76" stop-color="#7158f6"/>
+      <stop offset="1" stop-color="#a13bef"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#47cbff" stop-opacity=".93"/>
+      <stop offset=".37" stop-color="#408efc" stop-opacity=".34"/>
+      <stop offset=".76" stop-color="#8c5cff" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#6438e9" stop-opacity=".18"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#19275a"/>
+      <stop offset="1" stop-color="#0a0d1c"/>
+    </linearGradient>
+    <linearGradient id="fadeRight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#080b16" stop-opacity=".99"/>
+      <stop offset=".37" stop-color="#080b16" stop-opacity=".74"/>
+      <stop offset=".61" stop-color="#080b16" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="microDots" width="17" height="17" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.15" fill="#b7d9ff" opacity=".34"/>
+    </pattern>
+    <clipPath id="globeClip"><circle cx="1142" cy="342" r="329"/></clipPath>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="smallGlow" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="680" fill="url(#sky)"/>
+  <rect width="1600" height="680" fill="url(#aurora)"/>
+
+  <!-- Fine plotting lines give the illustration the feel of an atlas. -->
+  <g stroke="#78a7e9" stroke-opacity=".07" stroke-width="1">
+    <path d="M0 114H1600M0 228H1600M0 342H1600M0 456H1600M0 570H1600"/>
+    <path d="M150 0V680M300 0V680M450 0V680M600 0V680M750 0V680M900 0V680M1050 0V680M1200 0V680M1350 0V680M1500 0V680"/>
+  </g>
+  <path d="M0 596C196 539 401 555 583 593S990 637 1212 554s311-75 388-63V680H0Z" fill="url(#ground)" opacity=".56"/>
+  <path d="M0 615c259-70 475 39 716-9 213-43 449-13 884-97" fill="none" stroke="#5664d4" stroke-opacity=".26" stroke-width="1.2"/>
+  <path d="M0 642c279-54 498 8 764-10 271-18 499-77 836-109" fill="none" stroke="#369df9" stroke-opacity=".13" stroke-width="1"/>
+
+  <!-- Orbital trails sit behind the planet and provide depth. -->
+  <ellipse cx="1127" cy="351" rx="501" ry="228" transform="rotate(-19 1127 351)" fill="none" stroke="#568dff" stroke-opacity=".2" stroke-width="1.6"/>
+  <ellipse cx="1138" cy="343" rx="466" ry="301" transform="rotate(18 1138 343)" fill="none" stroke="#8a5dff" stroke-opacity=".13" stroke-width="1.2" stroke-dasharray="5 10"/>
+  <circle cx="1142" cy="342" r="409" fill="url(#halo)"/>
+  <circle cx="1142" cy="342" r="333" fill="#4d75ff" opacity=".2" filter="url(#glow)"/>
+
+  <circle cx="1142" cy="342" r="329" fill="url(#globeFill)"/>
+  <g clip-path="url(#globeClip)">
+    <!-- Meridian and parallel curves. -->
+    <g fill="none" stroke="#83b8ff" stroke-width="1" stroke-opacity=".16">
+      <ellipse cx="1142" cy="342" rx="329" ry="88"/>
+      <ellipse cx="1142" cy="342" rx="329" ry="181"/>
+      <ellipse cx="1142" cy="342" rx="329" ry="274"/>
+      <path d="M813 342h658"/>
+      <ellipse cx="1142" cy="342" rx="120" ry="329"/>
+      <ellipse cx="1142" cy="342" rx="228" ry="329"/>
+      <path d="M1142 13v658"/>
+    </g>
+
+    <!-- Simplified geographic silhouettes are shaped to the sphere. -->
+    <g fill="url(#land)" fill-opacity=".69" stroke="#82c3ff" stroke-opacity=".42" stroke-width="1.4" stroke-linejoin="round">
+      <path d="M807 163 837 143 856 120 881 113 899 93 916 104 933 122 961 118 976 133 999 132 1017 148 1001 161 989 180 970 187 959 202 940 207 925 225 902 229 896 246 874 250 870 265 857 266 848 286 824 287 811 270 823 247 818 225 831 211 820 194Z"/>
+      <path d="M958 209 979 203 995 213 1000 227 1017 227 1029 246 1021 262 1001 267 992 283 1008 298 1001 314 987 310 971 294 956 291 944 270 928 261 933 241Z"/>
+      <path d="M1003 319 1025 305 1047 312 1063 329 1080 339 1080 357 1092 367 1079 386 1093 406 1076 421 1080 447 1065 469 1053 502 1038 529 1026 553 1011 567 1002 550 1008 529 995 513 995 493 982 475 986 452 972 430 974 404 968 382 976 361 981 339Z"/>
+      <path d="M1138 199 1155 183 1181 177 1202 188 1214 204 1199 219 1190 238 1169 245 1151 232 1137 220Z"/>
+      <path d="M1190 253 1212 242 1236 247 1251 266 1251 286 1268 299 1259 315 1236 321 1227 337 1207 334 1199 317 1183 313 1174 294Z"/>
+      <path d="M1140 329 1163 313 1187 319 1204 334 1232 335 1244 355 1270 365 1279 389 1264 413 1266 438 1245 460 1236 487 1216 511 1193 518 1174 501 1168 475 1151 457 1141 430 1137 401 1128 378 1132 353Z"/>
+      <path d="M1205 166 1229 147 1260 147 1275 134 1299 138 1316 125 1341 136 1354 126 1381 138 1392 155 1420 169 1439 192 1424 211 1444 236 1426 252 1405 249 1391 265 1371 256 1352 272 1330 265 1315 278 1293 273 1280 258 1259 261 1247 244 1223 237 1209 216 1219 200 1204 186Z"/>
+      <path d="M1366 277 1385 279 1400 301 1421 312 1414 329 1396 336 1387 352 1374 343 1363 325 1354 307Z"/>
+      <path d="M1384 466 1401 455 1419 461 1439 456 1454 474 1469 479 1476 505 1460 520 1440 522 1425 533 1403 524 1381 530 1366 514 1374 492Z"/>
+      <path d="M1317 343 1328 345 1334 354 1326 365 1318 358ZM1355 373 1361 370 1367 377 1365 386 1356 389 1352 381ZM1416 370 1423 370 1429 381 1421 389 1415 383Z"/>
+    </g>
+    <g fill="url(#microDots)" opacity=".75">
+      <circle cx="1142" cy="342" r="329"/>
+    </g>
+    <path d="M799 391c148 4 240 65 343 135 109 74 204 87 351 72v83H785Z" fill="#0c1230" opacity=".37"/>
+    <ellipse cx="1005" cy="207" rx="294" ry="170" fill="#73ceff" opacity=".095"/>
+  </g>
+
+  <circle cx="1142" cy="342" r="329" fill="none" stroke="url(#rim)" stroke-width="2.4"/>
+  <path d="M873 153A329 329 0 0 1 1350 86" fill="none" stroke="#6bd1ff" stroke-opacity=".8" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M1398 550a329 329 0 0 1-358 106" fill="none" stroke="#9b58ff" stroke-opacity=".55" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- A few glowing locations recall the dot arc in the ATLAS mark. -->
+  <g fill="#82d6ff">
+    <circle cx="931" cy="210" r="11" opacity=".45" filter="url(#smallGlow)"/><circle cx="931" cy="210" r="3"/>
+    <circle cx="1074" cy="404" r="12" opacity=".5" filter="url(#smallGlow)"/><circle cx="1074" cy="404" r="3.5"/>
+    <circle cx="1196" cy="249" r="12" opacity=".5" filter="url(#smallGlow)"/><circle cx="1196" cy="249" r="3.5"/>
+    <circle cx="1364" cy="323" r="10" opacity=".5" filter="url(#smallGlow)"/><circle cx="1364" cy="323" r="3"/>
+  </g>
+  <g fill="#ab7aff">
+    <circle cx="1210" cy="483" r="11" opacity=".48" filter="url(#smallGlow)"/><circle cx="1210" cy="483" r="3"/>
+    <circle cx="1418" cy="489" r="11" opacity=".48" filter="url(#smallGlow)"/><circle cx="1418" cy="489" r="3"/>
+  </g>
+  <g fill="#84baff" opacity=".63">
+    <circle cx="708" cy="191" r="2"/><circle cx="749" cy="295" r="1.4"/><circle cx="700" cy="440" r="1.7"/>
+    <circle cx="1480" cy="98" r="1.5"/><circle cx="1523" cy="192" r="2"/><circle cx="1531" cy="438" r="1.5"/>
+    <circle cx="499" cy="120" r="1.3"/><circle cx="567" cy="316" r="1.4"/><circle cx="338" cy="532" r="1"/>
+  </g>
+  <path d="M610 557C905 632 1187 665 1587 412" fill="none" stroke="#74a7ff" stroke-opacity=".13" stroke-width="1.3"/>
+  <path d="M692 113C868 38 1095 19 1284 102" fill="none" stroke="#8c65ff" stroke-opacity=".16" stroke-width="1.3" stroke-dasharray="3 9"/>
+  <rect width="1600" height="680" fill="url(#fadeRight)"/>
+</svg>
